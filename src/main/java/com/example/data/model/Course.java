@@ -15,5 +15,5 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Course extends BaseEntity {
     private String courseName;
     private String description;
-
+    private Integer capacity;
 }
