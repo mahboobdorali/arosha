@@ -8,6 +8,7 @@ import com.example.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -18,6 +19,7 @@ public class CourseServiceImpl implements CourseService {
     private final ModelMapper modelMapper;
 
     @Override
+    @Transactional
     public Mono<CourseDto> addCourse(CourseDto courseDto) {
         Course course = modelMapper.map(courseDto, Course.class);
         return courseRepository.save(course)
@@ -36,6 +38,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    @Transactional
     public Mono<Void> delete(Long courseId) {
         return null;
     }

@@ -8,6 +8,7 @@ import com.example.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -18,6 +19,7 @@ public class PersonServiceImpl implements PersonService {
     private final ModelMapper modelMapper;
 
     @Override
+    @Transactional
     public Mono<PersonDto> addPerson(PersonDto personDto) {
         Person person = modelMapper.map(personDto, Person.class);
         return personRepository.save(person)
