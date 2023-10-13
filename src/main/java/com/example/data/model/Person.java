@@ -10,7 +10,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table("person")
+@Table("person_test")
 public class Person extends BaseEntity {
     private String firstName;
     private String lastName;

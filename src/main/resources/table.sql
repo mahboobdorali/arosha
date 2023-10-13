@@ -3,7 +3,7 @@ CREATE TABLE course (
                         course_name VARCHAR(255) NOT NULL,
                         description TEXT
 );
-CREATE TABLE person (
+CREATE TABLE person_test (
                         id SERIAL PRIMARY KEY,
                         first_name VARCHAR(255) NOT NULL,
                         last_name VARCHAR(255) NOT NULL
