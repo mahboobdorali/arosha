@@ -12,4 +12,5 @@ import lombok.Setter;
 public class CourseDto {
     private String courseName;
     private String description;
+    private Integer capacity;
 }
